@@ -1,0 +1,6 @@
+{
+  "name": "AI Project Mentor - SRS Document & Specification Portal",
+  "description": "Comprehensive IEEE 830-1998 compliant 12-page Software Requirements Specification (SRS) for AI Project Mentor with interactive reader, customizer, and multi-format download (PDF, Word DOCX, Markdown, Print).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
