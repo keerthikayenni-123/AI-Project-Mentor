@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI } from '@google/genai';
 
@@ -1856,6 +1857,16 @@ app.get('/api/health', (req: Request, res: Response) => {
     environment: process.env.NODE_ENV || 'development',
     timestamp: new Date().toISOString(),
   });
+});
+
+// Download full project source archive for deployment
+app.get('/api/download/project-src.tar.gz', (req: Request, res: Response) => {
+  const filePath = path.resolve(__dirname, 'project-src.tar.gz');
+  if (fs.existsSync(filePath)) {
+    res.download(filePath, 'ai-project-mentor-src.tar.gz');
+  } else {
+    res.status(404).send('Archive not found');
+  }
 });
 
 // ==========================================

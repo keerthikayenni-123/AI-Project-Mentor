@@ -747,3 +747,5 @@ export const AuthPortal: React.FC<AuthPortalProps> = ({
     </div>
   );
 };
+
+export default AuthPortal;
