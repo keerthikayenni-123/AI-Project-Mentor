@@ -320,7 +320,7 @@ export default function App() {
           )}
 
           {currentPage === 'documentation' && (
-            <Documentation activeProject={activeProject} />
+            <Documentation activeProject={activeProject} onNavigate={(page) => setCurrentPage(page)} />
           )}
 
           {currentPage === 'evaluator' && (
